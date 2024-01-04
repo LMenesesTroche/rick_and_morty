@@ -1,0 +1,13 @@
+.titulo{
+    font-size:xx-large;
+}
+
+.card{
+    background-color: rgb(86, 86, 86);
+    width: 10em;
+    margin: 5px;
+}
+.imagen{
+    width: 100px;
+    height: 100px;
+}

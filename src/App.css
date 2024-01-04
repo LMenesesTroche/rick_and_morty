@@ -1,0 +1,14 @@
+.App {
+   text-align: center;
+   background-color: black;
+   background-image: url(../espacio.jpg);
+   background-size: cover;
+   background-size: 100rem;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+body, #root{
+   margin: 0;
+   padding: 0;
+   height: 100%;
+}

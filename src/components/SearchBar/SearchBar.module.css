@@ -1,0 +1,23 @@
+.SearchBar{
+    display: flex;
+    justify-content:space-evenly;
+    background-color: #c5c5c5;
+    padding: 10px;
+    width: 450px;
+    float: right;
+    border-radius: 7px;
+    outline: none;
+
+}
+.input{
+    background-color: aliceblue;
+    border:none;
+    width: 250px;
+}
+.boton{
+    background-color: yellow;
+    padding: 4px;
+    width: 120px;
+    border-radius: 7px;
+    border:none;
+}
