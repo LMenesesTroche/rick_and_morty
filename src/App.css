@@ -1,14 +1,21 @@
-.App {
-   text-align: center;
-   background-color: black;
-   background-image: url(../espacio.jpg);
-   background-size: cover;
-   background-size: 100rem;
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-}
-body, #root{
-   margin: 0;
-   padding: 0;
-   height: 100%;
+.App{
+    /* centramos todos los textos */
+    text-align: center;
+
+    
+    display: flex;
+    justify-content: center;
+    /* Alineamos todo al centro */
+    align-items: center;
+    /*Ordenamos las cartas y la searchbox por columnas */
+    flex-direction: column;
+    /*Esto hace que tengamos espacio entre la searchbox y las cartas*/
+    gap: 20px;
+    /* Imagen de fondo */
+    background-image: url(../espacio.jpg);
+    /* Sin esto se ve balanco abajo */
+    /* height: auto; */
+    min-height: 100vh;
+    
+
 }

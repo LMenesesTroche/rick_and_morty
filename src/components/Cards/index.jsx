@@ -2,7 +2,7 @@ import Card from '../Card';
 import styles from './cards.module.css'
 export default function Cards({characters}) {
    return (
-      <div className={styles.ko} key ={characters.id} >
+      <div className={styles.container} key ={characters.id} >
          {characters.map((character,index)=>(
             
             <Card 

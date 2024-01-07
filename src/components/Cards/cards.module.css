@@ -1,7 +1,7 @@
-.ko{
+.container{
+    /*  diseño responsive rapidp */
     display: flex;
-    flex-direction: row;
-    padding-top: 100px;
-    padding-left: 10px;
-    justify-content:space-between;
+    flex-wrap: wrap;
+   
 }
+
