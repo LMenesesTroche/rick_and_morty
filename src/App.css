@@ -9,12 +9,14 @@
     align-items: center;
     /*Ordenamos las cartas y la searchbox por columnas */
     flex-direction: column;
+
     /*Esto hace que tengamos espacio entre la searchbox y las cartas*/
-    gap: 20px;
+    /* gap: -40px; */
+
     /* Imagen de fondo */
     background-image: url(../espacio.jpg);
     /* Sin esto se ve balanco abajo */
-    /* height: auto; */
+    
     min-height: 100vh;
     
 
