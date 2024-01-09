@@ -15,7 +15,7 @@ export default function Card(props) {
       <h1
         style={{
           backgroundColor: "yellow",
-          fontSize: 16,
+          fontSize: 20,
         }}
       >
         {name}

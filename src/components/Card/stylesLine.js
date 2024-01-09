@@ -1,4 +1,5 @@
 export const stylesLine  = {
+  
     img: {
       borderRadius: "10%",
     },
