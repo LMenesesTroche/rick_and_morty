@@ -1,14 +1,30 @@
-import React from 'react';
+import { useState } from "react";
+import { Button, ContainerNav, Input } from "./misEstilos";
 
-import styles from './SearchBar.module.css'
+const  SearchBar = (props) => {
 
-export default function SearchBar(props) {
-   const {onSearch} = props;
+   const [id, setId] = useState('')
+
+   const handleClick = () => {
+      console.log('props', props);
+      props.onSearch(id);
+   }
+
+   const hamdleChange = ({target}) => {
+      setId(target.value)
+   }
 
    return (
-      <div className={styles.SearchBar}>
-         <input  className={styles.input}type='search' placeholder='id..' />
-         <button className={styles.boton} onClick={onSearch}>Agregar</button>
-      </div>
+      <ContainerNav>
+         <Input
+            onChange={hamdleChange}
+            value={id}
+            type='search' 
+            placeholder="id.."
+         />
+         <Button onClick={handleClick}>Agregar</Button>
+      </ContainerNav>
    );
 }
+
+export default SearchBar;

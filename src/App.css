@@ -1,23 +1,7 @@
-.App{
-    /* centramos todos los textos */
+.App {
     text-align: center;
-
-    
     display: flex;
-    justify-content: center;
-    /* Alineamos todo al centro */
     align-items: center;
-    /*Ordenamos las cartas y la searchbox por columnas */
     flex-direction: column;
-
-    /*Esto hace que tengamos espacio entre la searchbox y las cartas*/
-    /* gap: -40px; */
-
-    /* Imagen de fondo */
-    background-image: url(../espacio.jpg);
-    /* Sin esto se ve balanco abajo */
-    
-    min-height: 100vh;
-    
-
-}
+    gap: 20px;
+ }

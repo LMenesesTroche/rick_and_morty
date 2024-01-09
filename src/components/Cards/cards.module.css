@@ -1,7 +1,6 @@
-.container{
-    /*  diseño responsive rapidp */
+.container {
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
-   
-}
-
+    justify-content: center;
+  }
