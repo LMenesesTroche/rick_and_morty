@@ -27,7 +27,10 @@ function App() {
 
    return (
       <div className='App'>
-         <Nav onSearch={onSearch} />
+         {/* <div className='heather'> */}
+             <Nav onSearch={onSearch} />
+         {/* </div> */}
+         
          <Routes>
             <Route path='/home' element={<Cards characters={characters}onClose={onClose}/>}></Route>
             <Route path='/about' element={<About/>}></Route>

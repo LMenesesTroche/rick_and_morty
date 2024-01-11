@@ -1,0 +1,22 @@
+.containerOffButtons{
+  display: flex;
+  background-color: black;
+  width: 100%;
+  justify-content: center;
+  justify-content: center ;
+  position: relative;
+  
+}
+.nav-button{
+    display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #000000; /* Color del borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  color: black; /* Color del texto */
+  background-color: yellow; /* Color de fondo */
+  transition: background-color 0.3s, color 0.3s;
+}

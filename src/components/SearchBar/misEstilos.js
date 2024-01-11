@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 
 export const ContainerNav = styled.div`
-   background-color: lightblue;
-   width: 100%;
+   position: absolute;
+   background-color: gray;
+   width: 350px;
+   height: 60px;
    padding: 10px;
    display: flex;
-   justify-content: 
+   right:6px;
+   justify-content: center;
+
+   
 `
 
 export const Button = styled.button`
-   background-color: blue;
-   color: white;
+   background-color: yellow;
+   color: black;
    border: none;
    padding: 10px;
    border-radius: 5px;
