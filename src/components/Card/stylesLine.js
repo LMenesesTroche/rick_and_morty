@@ -1,9 +1,8 @@
 export const stylesLine  = {
-  
-    img: {
-      borderRadius: "10%",
-    },
-    card: {
-      width: "100%",
-    }
+  img: {
+    borderRadius: "10%",
+  },
+  card: {
+    width: "100%",
   }
+}

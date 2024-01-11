@@ -5,8 +5,7 @@ export const ContainerNav = styled.div`
    width: 100%;
    padding: 10px;
    display: flex;
-   justify-content: end;
-   
+   justify-content: 
 `
 
 export const Button = styled.button`
