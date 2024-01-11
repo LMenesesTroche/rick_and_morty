@@ -2,9 +2,7 @@
   display: flex;
   background-color: black;
   width: 100%;
-  justify-content: center;
-  justify-content: center ;
-  position: relative;
+  justify-content: space-evenly;
   
 }
 .nav-button{

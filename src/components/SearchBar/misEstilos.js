@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerNav = styled.div`
-   position: absolute;
+   
    background-color: gray;
    width: 350px;
    height: 60px;
