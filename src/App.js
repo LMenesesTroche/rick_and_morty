@@ -5,11 +5,13 @@ import Cards from './components/Cards';
 import Nav from './components/Nav';
 import useApp from './hooks/useApp'
 
-const URL = 'https://rickandmortyapi.com/api/character/'
+const URL = 'https://rickandmortyapi.com/api/character/' // No tengo idea de que es esto
+
 function App() {
-
-   const [characters,setCharacters] = useState([])
-
+// Esta es una variable de mis personajes y set characters es para modificar mis personajes, no funciona sin
+// useState
+   const [characters,setCharacters] = useState([]) 
+// No se qu es esto
    const onSearch = async(id) =>{
       try{
          const response = await fetch(`${URL}${id}`);
