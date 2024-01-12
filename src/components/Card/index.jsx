@@ -1,5 +1,7 @@
 import "./styles.css";
 import {stylesLine} from './stylesLine'
+import { Link } from "react-router-dom";
+
 export default function Card(props) {
   const { name, status, gender, species, origin, image, onClose } = props;
 
@@ -12,14 +14,17 @@ export default function Card(props) {
         width={200}
         style={stylesLine.img}
       />
-      <h1
-        style={{
-          backgroundColor: "yellow",
-          fontSize: 16,
-        }}
-      >
-        {name}
-      </h1>
+      <Link  to={`/detail/${props.id}`}>
+        <h1
+         style={{
+           backgroundColor: "yellow",
+           fontSize: 16,
+          }}
+        >
+          {name}
+        </h1>
+      </Link>
+      
       <div
         style={{
           display: "flex",
