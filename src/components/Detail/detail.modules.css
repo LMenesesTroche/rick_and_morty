@@ -1,3 +1,27 @@
-.container{
-    background-color: yellowgreen;
+.containerOfDetails{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height:100vh;
+    margin-top: -40px;
+
+}
+.titulo{
+    font-size: 60px;
+}
+.info{
+    padding-top: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    color:white;
+}
+.datos{
+    font-size: 30px;
+    font-weight: 400;
+}
+.image{
+    width: 50%;
+    margin-top: 100px;
+    /* border-radius: 50%; Hace que el borde sea redondeado, creando una forma circular */
+    overflow: hidden; 
 }

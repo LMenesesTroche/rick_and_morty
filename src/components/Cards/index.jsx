@@ -9,8 +9,9 @@ export const Cards = ({ characters, onClose }) => {
         //   ({ id, name, status, gender, species, origin, image, onClick }) => (
         (item) => {
           return (
-            <div key={item.id}>
+            <div >
               <Card
+              key={item.id}
                 id={item.id}
                 name={item.name}
                 status={item.status}
