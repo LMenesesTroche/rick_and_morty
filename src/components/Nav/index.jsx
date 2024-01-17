@@ -6,17 +6,20 @@ const Nav = ({onSearch}) => {
   return (
     <>
         <div className="containerOffButtons">
-          <Link to="/home">
-          <button className="nav-button">Home</button>
-          </Link>
-          <Link to="/about">
-          <button className="nav-button">About</button>
-            
-          </Link>
+          <div className="leftNav">
+            <Link to="/home">
+            <button className="navbuttons">Home</button>
+            </Link>
+            <Link to="/about">
+            <button className="navbuttons">About</button>
+            </Link>
+          </div>
+          <div className="rightNav">
+            <SearchBar onSearch={onSearch} />
+          </div>
         
         
 
-        <SearchBar onSearch={onSearch} />
         </div>
     </>
   );

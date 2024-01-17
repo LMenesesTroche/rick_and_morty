@@ -3,9 +3,12 @@
   background-color: black;
   width: 100%;
   justify-content: space-evenly;
-  
 }
-.nav-button{
+.leftNav{
+  width: 70%;
+  justify-content: space-evenly;
+}
+.navbuttons{
     display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -17,4 +20,8 @@
   color: black; /* Color del texto */
   background-color: yellow; /* Color de fondo */
   transition: background-color 0.3s, color 0.3s;
+}
+
+.rightNav{
+  margin-left: 2px;
 }
