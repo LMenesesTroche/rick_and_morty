@@ -1,36 +1,58 @@
-import styles from './Forms.css'
-import image from './forms.jpg'
-import React,{useState} from 'react'
+import React, { useState } from 'react';
+import validation from './validations.js';  // Asumiendo que el archivo se llama validation.js
+import styles from './Forms.css';
+import image from './forms.jpg';
 
-export default function Form () {
-    const [errors, setErrors] = useState({});
-    const handleValidation  = (form,setErrors,errors) =>{
-    
+export default function Form({ login }) {
+  // Estado local
+  const [userData, setUserData] = useState({
+    username: '',
+    password: ''
+  });
 
-        if(!form.email) setErrors({...errors,email:"Email vacio"}) 
-        else {
-        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$/.test(form.email))setErrors({...errors,email:""}) 
-        else setErrors({...errors,email:"Email invalido"});
-    }
-    const handeSubmit = (e)=>{
-        e.preventDefault();
-        handleValidation();
-    };
-    };
-    return(
-        <form className="containerForm">
-            <div className='imageForm'>
-                <img src={image} alt="RickyMorty" height={150} width={150}/>
-            </div>
-            <div className='form'>
-                <label>Email</label>
-                <input className='inputForm'></input>
-                <label>Password</label>
-                <input className='inputForm'></input>   
+  const [errors, setErrors] = useState({
+    username: '',
+    password: ''
+  });
 
-            </div>
-            <button className='buttonSubmit'>Submit</button>
-            
-        </form>
-    )
+  const handleChange = (e) => {
+    setUserData({
+      ...userData,
+      [e.target.name]: e.target.value
+    });
+
+    setErrors(validation({
+      ...userData,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  return (
+    <div className='containerForm'>
+        <div className="imageForm">
+            <img src={image} alt="Imagen" height={200} width={200}/>
+        </div>
+      <form className='form' onSubmit={() => login(userData)}>
+        <label>Username</label>
+        <input
+          type='text'
+          name='username'
+          value={userData.username}
+          onChange={handleChange}
+          className={errors.username && 'warning'}
+        />
+        {errors.username && <span className={styles.warning}>{errors.username}</span>}
+        <label>Password</label>
+        <input
+          type='password'
+          name='password'
+          value={userData.password}
+          onChange={handleChange}
+          className={errors.password && styles.warning}
+        />
+        {errors.password && <span className={styles.warning}>{errors.password}</span>}
+        <button type='submit'>Login</button>
+      </form>
+    </div>
+  );
 }

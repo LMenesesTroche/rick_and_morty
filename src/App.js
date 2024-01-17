@@ -19,8 +19,8 @@ function App() {
 
 
    // Falso
-   const EMAIL = 'batman@gmail.com';
-   const PASSWORD = 'robin1234';
+   const EMAIL = 'lucas@gmail.com';
+   const PASSWORD = '123';
 
    useEffect(() => {
       !access && navigate('/');
