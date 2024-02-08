@@ -17,7 +17,7 @@ export default function Card(props) {
       <Link  to={`/detail/${props.id}`}>
         <h1
          style={{
-           backgroundColor: "yellow",
+           backgroundColor: "#08B2C9",
            fontSize: 16,
           }}
         >

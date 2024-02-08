@@ -1,4 +1,4 @@
-.containerOfAbout{
+.container{
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -6,25 +6,22 @@
   margin-top: -40px;
 
 }
-.infoAbout{
-  padding-top: 40px;
+.leftAbout{
+  padding: 30px;
+  padding-top: 165px;
+
   background-color: rgba(0, 0, 0, 0.8);
   width: 50%;
   color:white;
 }
-.izquierda{
-  background-color: aqua;
-  width: 50%;
-  font-size: large;
 
-}
-.aboutData{
+.text{
   font-size: 30px;
   font-weight: 400;
 }
 .imageAbout{
   width: 50%;
   margin-top: 150px;
-  /* border-radius: 50%; Hace que el borde sea redondeado, creando una forma circular */
   overflow: hidden; 
+  border-radius: 50px;
 }

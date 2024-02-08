@@ -1,0 +1,45 @@
+/* Contenedor negro */
+.container{
+  /* Hace que los elementos esten alineados verticalmente */
+  display: flex;
+  /* COlor de fondo */
+  background-color: black;
+  /* Anchura y altura */
+  width: 100%;
+  height: 80px;
+  
+  /* Centra los elementos al centro verticalmente */
+  align-items: center;
+  justify-content: space-between;
+  padding:0 20px;
+}
+
+/* Botones amarillos */
+.navbuttons{
+  /* Hace que los botones sean mas gorditos */
+  padding: 10px 20px;
+  /* Tamaño de letra */
+  font-size: 16px;
+  /* Alinea el texto al centro */
+  /* Esquinas redondeadas */
+  border-radius: 5px; 
+ /* Color del texto */
+  color: black;
+  /* Color de fondo */
+  background-color: #08B2C9; 
+
+  margin-left: 150px;
+  margin-right: 50px;
+}
+
+/* COntenedor de los botones */
+.containerOffButtons{
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image{
+  margin-left: 50px;
+}
+

@@ -19,7 +19,7 @@ function App() {
 
 
    // Falso
-   const EMAIL = 'lucas@gmail.com';
+   const EMAIL = 'lucasmenesestroche@gmail.com';
    const PASSWORD = '123';
 
    useEffect(() => {

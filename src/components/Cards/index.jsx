@@ -1,5 +1,4 @@
 import Card from "../Card";
-
 import styles from "./styles.module.css";
 
 export const Cards = ({ characters, onClose }) => {
@@ -11,7 +10,7 @@ export const Cards = ({ characters, onClose }) => {
           return (
             <div >
               <Card
-              key={item.id}
+                key={item.id}
                 id={item.id}
                 name={item.name}
                 status={item.status}

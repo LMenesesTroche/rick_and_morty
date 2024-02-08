@@ -1,0 +1,71 @@
+.container{
+    /* Margen hacia arriba */
+    margin-top: 20px;
+    /* COlor de fondo */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Altura y anchura del contenedor */
+    width: 350px;
+    height: 550px;
+    /* Bordes redondeados */
+    border-radius: 25px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.warning{
+    color:red;
+}
+.image {
+    width: 200px; /* Asegúrate de que la anchura y altura sean iguales */
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.form{ 
+    /* Para que este vertical */
+    display: grid; 
+    /* Color */
+    color: white;
+    /* Altura */
+    /* Espacio entre los elementos */
+    grid-gap: 5px;
+    /* Padding */
+    padding: 20px;
+    /* Anchura */
+    width: 100%;
+
+    box-sizing: border-box;    
+
+}
+.inputForm{
+    /* Anchura */
+    padding: 15px;
+    /* Borde */
+    border:none;
+    /* Borde redondeado */
+    border-radius: 8px;
+    /* color de fondo */
+    background-color: rgba(255, 255, 255, 0.2); 
+    /* color de las letras */
+    color:white;
+}
+.button{
+    padding: 15px 20px;
+    /* color de fondo */
+    background-color: #08B2C9;
+    /* color de las letras */
+    color: black;
+    /* quitar borde */
+    border:none;
+    /* borde redondeado */
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+

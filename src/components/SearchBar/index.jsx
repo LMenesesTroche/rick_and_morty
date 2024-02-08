@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, ContainerNav, Input } from "./misEstilos";
+import styles from './SearchBar.module.css'
 
 const  SearchBar = (props) => {
 
@@ -14,17 +14,20 @@ const  SearchBar = (props) => {
       setId(target.value)
    }
 
-   return (
-      <ContainerNav>
-         <Input
-            onChange={hamdleChange}
-            value={id}
-            type='search' 
-            placeholder="id.."
-         />
-         <Button onClick={handleClick}>Agregar</Button>
-      </ContainerNav>
-   );
+
+   return(
+      <div className={styles.ContainerNav}>
+         <input 
+            className={styles.Input} 
+            onChange={hamdleChange} 
+            value={id} 
+            type='search'
+            placeholder='id..'>
+         </input>
+         <button onClick={handleClick} className={styles.Button}>Agregar</button>
+      </div>
+   )
+   
 }
 
 export default SearchBar;
