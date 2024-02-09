@@ -1,0 +1,40 @@
+.container {
+  background-color: rgb(184, 184, 184);
+  width: 250px;
+  border-radius: 20px;
+  margin: 2cqh;
+  padding: 10px;
+  position: relative;
+}
+.buttonX{
+  position: absolute;
+  top: 10px; /* Cambia este valor según la distancia que quieras desde la parte superior */
+  right: 10px; 
+}
+.favButton{
+  position: absolute;
+  top: 10px; /* Cambia este valor según la distancia que quieras desde la parte superior */
+  left: 10px; 
+}
+.data{
+  display: "flex";
+  flex-direction: "column";
+  font-size: 12px;
+}
+.detail{
+  background-Color: #08B2C9;
+  width: 100%;
+  height: 30px;
+  font-Size: 12px;
+  
+}
+.detail a {
+ text-decoration: none;
+ color: black;
+
+}
+.img{
+  border-radius: 10%;
+  width: 250px;
+  height: 250px;
+}

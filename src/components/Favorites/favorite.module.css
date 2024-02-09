@@ -1,8 +1,9 @@
 .cartas {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
   }
 
 .titulo{
