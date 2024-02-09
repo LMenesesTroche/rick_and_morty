@@ -18,6 +18,9 @@ const Nav = ({onSearch}) => {
             <Link to="/about">
             <button className={styles.navbuttons}>About</button>
             </Link>
+            <Link to="/favorites">
+            <button className={styles.navbuttons}>Favorites</button>
+            </Link>
           </div>
 
           <div className={styles.containerOfSearchBar}>

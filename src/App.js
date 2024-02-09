@@ -2,7 +2,8 @@ import { useState , useEffect} from 'react';
 import './App.css';
 import Cards from './components/Cards';
 import About from './components/About';
-import Detail from './components/Detail'
+import Detail from './components/Detail';
+import Favorites from './components/Favorites';
 import Nav from './components/Nav';
 import { Route, Routes, useLocation ,useNavigate} from 'react-router-dom';
 import Form from './components/Form'
@@ -63,17 +64,11 @@ function App() {
             undefined
          }
          <Routes>
-            {/* Login */}
-            <Route path='/' element={
-               <Form login={login} />
-            }/>
-            
+            <Route path='/' element={<Form login={login} />}/>
+            <Route path='/favorites' element={<Favorites/>}/>
             <Route path='/home' element={<Cards characters={characters}onClose={onClose}/>}/>
             <Route path='/about' element={<About/>}></Route>
-           <Route
-               path='/detail/:id'
-               element={<Detail />}
-            />
+            <Route path='/detail/:id' element= {<Detail />} />
          </Routes>
       </div>
    );

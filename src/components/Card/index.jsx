@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 import {stylesLine} from './stylesLine'
 import { Link } from "react-router-dom";
@@ -12,14 +12,25 @@ const mapDispatchToProps = (dispatch) =>{
     removeFav: (id) => {dispatch(removeFav(id));}
     
   };
-const mapStateToProps = () =>{
 
-}
 
 }; 
 function Card(props) {
-  const { name, status, gender, species, origin, image, onClose , id} = props;
+  const { name, status, gender, species, origin, image, onClose , id, myFavorites} = props;
   const [isFav, setIsFav] = useState(false);
+
+
+  useEffect(() => {
+    if(myFavorites){
+      myFavorites.forEach((fav) => {
+        if (fav.id === props.id) {
+           setIsFav(true);
+        }
+     });
+    }
+   
+ }, [myFavorites]);
+
 
   const handleFavorite = () =>{
     if(isFav === true ){
@@ -30,6 +41,7 @@ function Card(props) {
       props.addFav(props);
     }
   };
+
   
   
 
