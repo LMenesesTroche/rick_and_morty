@@ -5,6 +5,7 @@ import styles from './nav.module.css'
 import logo from '../logo2.png'
 
 const Nav = ({onSearch}) => {
+  
   return (
     <>
         <div className={styles.container}>

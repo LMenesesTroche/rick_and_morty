@@ -6,16 +6,19 @@
   padding: 10px;
   position: relative;
 }
+
 .buttonX{
   position: absolute;
   top: 10px; /* Cambia este valor según la distancia que quieras desde la parte superior */
   right: 10px; 
 }
+
 .favButton{
   position: absolute;
   top: 10px; /* Cambia este valor según la distancia que quieras desde la parte superior */
   left: 10px; 
 }
+
 .data{
   display: "flex";
   flex-direction: "column";

@@ -45,7 +45,7 @@ function Card(props) {
   
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       <div className={styles.favButton}>
         {isFav ? (
           <button onClick={handleFavorite}>❤️</button>

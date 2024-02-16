@@ -4,11 +4,9 @@ import styles from "./styles.module.css";
 export const Cards = ({ characters, onClose }) => {
   return (
     <div className={styles.container}>
-      {characters.map(
-        //   ({ id, name, status, gender, species, origin, image, onClick }) => (
-        (item) => {
+      {characters.map((item) => {
           return (
-            <div >
+            <div > 
               <Card
                 key={item.id}
                 id={item.id}

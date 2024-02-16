@@ -11,6 +11,7 @@ import Form from './components/Form'
 const URL = 'https://rickandmortyapi.com/api/character/'
 
 function App() {
+
    const [characters, setCharacters] = useState([]);
 
    const [ access, setAccess ] = useState(false);
@@ -35,15 +36,19 @@ function App() {
          navigate('/home');
       }
    }
+
    const onSearch = async (id) => {
       try {
          const response = await fetch(`${URL}${id}`);
+
          const data = await response.json();
+         
          setCharacters([...characters, data]);
       } catch (error) {
          console.log('error', error);
       }
    }
+
    const onClose = (id) => {
       const personajesFiltrados = characters.filter((character) => character.id !== id);
       setCharacters(personajesFiltrados);
