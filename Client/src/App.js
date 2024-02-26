@@ -8,7 +8,7 @@ import Nav from './components/Nav';
 import { Route, Routes, useLocation ,useNavigate} from 'react-router-dom';
 import Form from './components/Form'
 
-const URL = 'https://rickandmortyapi.com/api/character/'
+const URL = "http://localhost:3001/rickandmorty/character/"
 
 function App() {
 
