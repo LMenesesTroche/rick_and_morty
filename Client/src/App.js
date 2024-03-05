@@ -1,66 +1,58 @@
-import { useState , useEffect} from 'react';
+import { useEffect, useState } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 import Cards from './components/Cards';
+import Nav from './components/Nav';
 import About from './components/About';
 import Detail from './components/Detail';
+import Form from './components/Form';
 import Favorites from './components/Favorites';
-import Nav from './components/Nav';
-import { Route, Routes, useLocation ,useNavigate} from 'react-router-dom';
-import Form from './components/Form'
-
-const URL = "http://localhost:3001/rickandmorty/character/"
 
 function App() {
 
-   const [characters, setCharacters] = useState([]);
-
+   const [ characters, setCharacters] = useState([]);
    const [ access, setAccess ] = useState(false);
 
    const location = useLocation();
    const navigate = useNavigate();
 
-
-   // Falso
+   //DB FALSA
    const EMAIL = 'lucasmenesestroche@gmail.com';
    const PASSWORD = '123';
 
    useEffect(() => {
       !access && navigate('/');
-   }, [access]);
+   }, [access])
 
-   const [userData, setUserData] = useState({email:'',password:''});
    function login(userData) {
-      
       if (userData.password === PASSWORD && userData.username === EMAIL) {
          setAccess(true);
          navigate('/home');
       }
    }
 
-   const onSearch = async (id) => {
-      try {
-         const response = await fetch(`${URL}${id}`);
-
-         const data = await response.json();
-         
-         setCharacters([...characters, data]);
-      } catch (error) {
-         console.log('error', error);
-      }
-   }
-
    const onClose = (id) => {
-      const personajesFiltrados = characters.filter((character) => character.id !== id);
-      setCharacters(personajesFiltrados);
-   }
-   const handleChange = (e) =>{
-      const {name, value} = e.target;
-      setUserData({
-         ...userData,
-         [name]:value,
-
-      });
+      //crea un nuevo arreglo sin el personaje
+      const filteredSate = characters.filter((char)=> char.id !== id);
+      setCharacters(filteredSate);
    };
+
+   const onSearch = (id) => {
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+         (reponse) => {
+            if (reponse.data.name) {
+               setCharacters((oldChars) => [...oldChars, reponse.data]);
+            } else {
+               window.alert(`¡No hay personajes con ID: ${id}!`);
+            }
+         }
+      );
+   };
+
+   //character = [characterSearched ] //memoria2
+   
+
    return (
       <div className='App'>
          { 
@@ -69,12 +61,32 @@ function App() {
             undefined
          }
          <Routes>
-            <Route path='/' element={<Form login={login} />}/>
-            <Route path='/favorites' element={<Favorites/>}/>
-            <Route path='/home' element={<Cards characters={characters}onClose={onClose}/>}/>
-            <Route path='/about' element={<About/>}></Route>
-            <Route path='/detail/:id' element= {<Detail />} />
+
+            {/* LOGIN */}
+            <Route path='/' element={
+               <Form login={login} />
+            }/>
+
+            {/* HOME */}
+            <Route path='/home' element={
+               <Cards characters={characters} onClose={onClose} />
+            } />
+
+            {/* ABOUT */}
+            <Route path='/about' element={
+               <About />
+            }/>
+
+            {/* Detail */}
+            <Route path='/detail/:id' element={
+               <Detail />
+            }/>
+
+            {/* FAVORITES */}
+            <Route path='/favorites' element={<Favorites />}/>
+
          </Routes>
+         
       </div>
    );
 }
