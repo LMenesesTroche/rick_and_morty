@@ -1,20 +1,27 @@
-const http = require ('http');
-const port = 3001;
-const getCharById = require('./controllers/getCharById');
+const express = require('express');
+const myRouter = require('./controllers/routes/index');
+const server = express();
+const PORT = 3001;
+server.use(express.json());
 
-const server = http.createServer((req,res)=>{
-    //Logica del servidor
-    res.setHeader("Access-Control-Allow-Origin","*");//esto le da permiso a quien sea a 
-
-    if(req.url.includes('/rickandmorty/character')){
-        
-        return getCharById(req, res)
-    }
-    res.writeHead(200, { 'Content-Type' : 'text/plain' });
-    return res.end('Hola te eh escuchado!! ');
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+       'Access-Control-Allow-Headers',
+       'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    res.header(
+       'Access-Control-Allow-Methods',
+       'GET, POST, OPTIONS, PUT, DELETE'
+    );
+    next();
 });
 
-server.listen(port, ()=>{
-    console.log(`Server is running on http://localhost:${port} /`);
-    //Logica qye se ejecuta cuando el serv se levanta
-})
+
+server.use('/rickandmorty', myRouter);
+// server.use('/carritoCompra', carritoRouter);
+
+server.listen(PORT, () => {
+   console.log('Server raised in port: ' + PORT);
+});

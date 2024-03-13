@@ -3,18 +3,22 @@ import validation from './validations.js';
 import style from './Forms.module.css';
 import image from './forms.jpg';
 
+
+// desesctructuramos el login que le pasamos por parametro en app.js
 export default function Form({ login }) {
-  // Estado local
+  // Estos no se que son 
   const [userData, setUserData] = useState({
     username: '',
     password: ''
   });
 
+  //Tampoco estos
   const [errors, setErrors] = useState({
     username: '',
     password: ''
   });
 
+  //
   const handleChange = (e) => {
     setUserData({
       ...userData,
@@ -27,12 +31,17 @@ export default function Form({ login }) {
     }));
   };
 
+  const handlerSubmit = (event) =>{
+      event.preventDefault();
+      login(userData);
+  }
+
   return (
     <div className={style.container}>
         <div className={style.image}>
             <img src={image} alt="Imagen" height={200} width={200}/>
         </div>
-      <form className={style.form} onSubmit={() => login(userData)}>
+      <form className={style.form} onSubmit={handlerSubmit}>
         <label>Username</label>
         <input
           type='text'

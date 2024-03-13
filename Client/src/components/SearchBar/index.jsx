@@ -2,14 +2,16 @@ import { useState } from "react";
 import styles from './SearchBar.module.css'
 
 const  SearchBar = (props) => {
-
+   const { onSearch } = props;
    const [id, setId] = useState('')
 
    const handleClick = () => {
-      console.log('props', props);
+
+      console.log('props', onSearch);
       props.onSearch(id);
    }
 
+   
    const hamdleChange = ({target}) => {
       setId(target.value)
    }

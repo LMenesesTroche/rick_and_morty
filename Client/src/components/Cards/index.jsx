@@ -1,12 +1,21 @@
+import { useSelector, useDispatch } from "react-redux";
 import Card from "../Card";
-import styles from "./styles.module.css";
+import styles from "./styles.module.css"
+import { removedChar } from '../../redux/actions'
 
-export const Cards = ({ characters, onClose }) => {
+export const Cards = () => {
+  const dispatch = useDispatch();
+  const characters = useSelector(state => state.allCharacters );
+  console.log(characters);
+  const onClose = (id) => {
+    dispatch(removedChar(id))
+    
+  }
   return (
     <div className={styles.container}>
-      {characters.map((item) => {
+      {characters ? characters.map((item) => { 
           return (
-            <div > 
+            <div key={item.id} > 
               <Card
                 key={item.id}
                 id={item.id}
@@ -22,7 +31,9 @@ export const Cards = ({ characters, onClose }) => {
             </div>
           );
         }
-      )}
+      ):
+      <></>
+      }
     </div>
   );
 };
