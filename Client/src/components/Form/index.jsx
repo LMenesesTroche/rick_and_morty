@@ -6,19 +6,19 @@ import image from './forms.jpg';
 
 // desesctructuramos el login que le pasamos por parametro en app.js
 export default function Form({ login }) {
-  // Estos no se que son 
+  
   const [userData, setUserData] = useState({
     username: '',
     password: ''
   });
 
-  //Tampoco estos
+  
   const [errors, setErrors] = useState({
     username: '',
     password: ''
   });
 
-  //
+  
   const handleChange = (e) => {
     setUserData({
       ...userData,

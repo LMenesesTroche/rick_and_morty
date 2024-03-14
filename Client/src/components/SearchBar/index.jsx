@@ -6,7 +6,6 @@ const  SearchBar = (props) => {
    const [id, setId] = useState('')
 
    const handleClick = () => {
-
       console.log('props', onSearch);
       props.onSearch(id);
    }
