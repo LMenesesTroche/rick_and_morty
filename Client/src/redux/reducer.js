@@ -20,7 +20,7 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 filteredCharacters:[...state.allCharacters,payload],
             }
         case ADD_FAVORITE:
-            console.log("simulamos que lo cerramos")
+            
             return {
                 ...state,
                 allCharacters: state.allCharacters.filter((char)=>char.id !== payload)

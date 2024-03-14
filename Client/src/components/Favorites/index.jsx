@@ -1,15 +1,23 @@
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar';
 import styles from './favorite.module.css';
 import { filterCards, orderCards } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
+import Card from "../Card";
+import { removedChar } from '../../redux/actions'
+
+
 //ESTAS SE VUELVE VARIABLES
 const {container, btn} = styles;
 
-
-export default function Nav({ onSearch, logout }) {
+export default function Nav() {
    const dispatch = useDispatch();
+   const myFavorites = useSelector((state) => state.myFavorites );
 
+   const onClose = (id) => {
+      dispatch(removedChar(id))
+    }
    const handleFilter = (e)=>{
       dispatch(filterCards(e.target.value))
    }
@@ -19,11 +27,6 @@ export default function Nav({ onSearch, logout }) {
    }
    return (
       <div className={container}>
-         <Link className={btn} to='/home'>Home</Link>
-         <Link className={btn} to='/about'>About</Link>
-         <Link className={btn} to='/favorites'>Favorites</Link>
-         <a className={btn} onClick={logout}>LogOut</a>
-         <SearchBar onSearch={onSearch}/>
          <div>
                 <select name="order" onChange={handleOrder} >
                     <option value="A">Ascendente</option>
@@ -38,6 +41,27 @@ export default function Nav({ onSearch, logout }) {
                     <option value="todos">todos</option>
                 </select>
          </div>
+         {myFavorites?.map((item) => { 
+          return (
+            <div key={item.id} > 
+              <Card
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                status={item.status}
+                species={item.species}
+                gender={item.gender}
+                origin={item.origin.name}
+                image={item.image}
+                onClose={onClose}
+                // {...item}
+              />
+            </div>
+          );
+        }
+      )
+      
+      }
       </div>
    );
 }
