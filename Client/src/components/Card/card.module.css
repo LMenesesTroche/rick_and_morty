@@ -22,20 +22,25 @@
 .data{
   display: "flex";
   flex-direction: "column";
-  font-size: 12px;
+  font-size: 16px;
 }
 .detail{
+  text-decoration: none;
   background-Color: #08B2C9;
   width: 100%;
   height: 30px;
-  font-Size: 12px;
-  
-}
-.detail a {
- text-decoration: none;
- color: black;
+  font-Size: 24px;
+  color: black;
 
 }
+a {
+  text-decoration: none;
+  width: 100%;
+  height: 30px;
+  font-size: 24px;
+  color: black;
+}
+
 .img{
   border-radius: 10%;
   width: 250px;

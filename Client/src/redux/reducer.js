@@ -1,11 +1,4 @@
-import { 
-    ADD_CHARACTER, 
-    ADD_FAVORITE, 
-    FILTER, 
-    ORDER, 
-    REMOVED_CHARACTER, 
-    REMOVED_FAVORITE
-} from "../redux/actions";
+import { ADD_FAVORITE, FILTER, ORDER, REMOVED_FAVORITE  } from "./actions";
 
 const initialState = {
     myFavorites:[],
@@ -13,25 +6,10 @@ const initialState = {
     filteredCharacters:[]
 }
 
-const rootReducer= (state = initialState, action)=>{
-    const { type, payload } = action;
-
-    switch (type) {
+const rootReducer = (state = initialState, {type, payload}) =>{
+    switch(type){
         case ADD_FAVORITE:
-            return{
-                ...state,
-                myFavorites: payload,
-            }
-
-        case ADD_CHARACTER:
-            return{
-                ...state,
-                allCharacters: [...state.allCharacters, payload],
-                filteredCharacters: [...state.allCharacters, payload],
-            }
-
-        case REMOVED_CHARACTER:
-            return{
+            return {
                 ...state,
                 allCharacters: state.allCharacters.filter((char)=>char.id !== payload)
             }
@@ -39,9 +17,8 @@ const rootReducer= (state = initialState, action)=>{
         case REMOVED_FAVORITE:
             return{
                 ...state,
-                myFavorites: payload
-            }
-
+                myFavorites:state.myFavorites.filter((char)=>char.id !== payload),
+            };
         case FILTER:
         return{
             ...state,

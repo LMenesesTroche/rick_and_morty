@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 export const ADD_FAVORITE = 'ADD_FAV';
@@ -7,15 +8,12 @@ export const REMOVED_FAVORITE = 'REMOVE_FAV';
 export const FILTER = 'FILTER';
 export const ORDER = 'ORDER';
 
-
 export function addChar(char){
-    
     return{
         type: ADD_CHARACTER,
         payload:char
     }
 }
-
 export function removedChar(id){
     return{
         type: REMOVED_CHARACTER,
@@ -54,6 +52,8 @@ export function filterCards(gender){
         payload:gender
     }
 }
+
+
 
 export function orderCards(order){
     return{
