@@ -1,6 +1,6 @@
 module.exports = [
     {
         email: 'lucasmenesestroche@gmail.com',
-        password: '1234567'
+        password: '123'
         // con comillas
     }];

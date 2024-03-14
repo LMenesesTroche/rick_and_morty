@@ -25,24 +25,25 @@ function App() {
    }, [access])
 
    function login(userData) {
-
-      console.log(userData.username,userData.password)
-      
+            
       const URL = 'http://localhost:3001/rickandmorty/login/';
       axios(URL + `?email=${userData.username}&password=${userData.password}`).then(({ data }) => {
-         console.log(data);
          setAccess(data.access);
       });
    }
 
    const onSearch = (id) => {
-      // axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+      //recibimos el id que nos manda el searchBar y utilizamos axios para que nos mande 
+      //los datos (response)
       axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-         (reponse) => {
-            if (reponse.data.name) {
-               // setCharacters((oldChars) => [...oldChars, reponse.data]);
-               dispatch(addChar(reponse.data));
+         (response) => {
+            console.log(response.data)
+            //Si estamos recibiendo bien los datos
+            if (response.data.name) {
+               //hacemos dispatch y le mandamos la data a addChar
+               dispatch(addChar(response.data));
             } else {
+               //Si no estamos recibiendo los datos mandamos una alerta
                window.alert(`¡No hay personajes con ID: ${id}!`);
             }
          }

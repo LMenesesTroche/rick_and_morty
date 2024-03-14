@@ -6,7 +6,7 @@ import { removedChar } from '../../redux/actions'
 export const Cards = () => {
   const dispatch = useDispatch();
   const characters = useSelector(state => state.allCharacters );
-  console.log(characters);
+  
   const onClose = (id) => {
     dispatch(removedChar(id))
     

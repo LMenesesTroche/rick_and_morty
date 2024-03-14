@@ -7,7 +7,6 @@ function getCharById(req, res){
     axios.get(`${URL}/${id}`)
     .then(response =>{
         //deconstruction
-        console.log(response)
         let { 
             name,
             gender,
