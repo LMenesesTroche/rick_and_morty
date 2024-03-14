@@ -1,4 +1,4 @@
-import { ADD_CHARACTER, ADD_FAVORITE, FILTER, ORDER, REMOVED_FAVORITE  } from "./actions";
+import { ADD_CHARACTER, ADD_FAVORITE, FILTER, ORDER, REMOVED_FAVORITE, REMOVE_CHARACTER  } from "./actions";
 
 const initialState = {
     myFavorites:[],
@@ -8,6 +8,11 @@ const initialState = {
 
 const rootReducer = (state = initialState, {type, payload}) =>{
     switch(type){
+        case REMOVE_CHARACTER:
+            return{
+                ...state,
+                allCharacters: state.allCharacters.filter((char)=>char.id !== payload)
+            }
         case ADD_CHARACTER:
             return{
                 ...state,
@@ -15,6 +20,7 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 filteredCharacters:[...state.allCharacters,payload],
             }
         case ADD_FAVORITE:
+            console.log("simulamos que lo cerramos")
             return {
                 ...state,
                 allCharacters: state.allCharacters.filter((char)=>char.id !== payload)

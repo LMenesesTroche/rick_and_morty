@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../../redux/actions';
 //ESTAS SE VUELVE VARIABLES
-const {div, nameStyle, imageStyle, btn, data } = styles;
 
 
 export default function Card({ id, name, status, species, gender, origin, image, onClose }) {

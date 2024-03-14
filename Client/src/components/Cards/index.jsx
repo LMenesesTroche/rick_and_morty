@@ -8,6 +8,7 @@ export const Cards = () => {
   const characters = useSelector(state => state.allCharacters );
   
   const onClose = (id) => {
+    console.log('Funciona el boton, se cerrara ', id);
     dispatch(removedChar(id))
     
   }

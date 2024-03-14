@@ -14,7 +14,8 @@ import { addChar } from './redux/actions';
 function App() {
    const dispatch = useDispatch();
 
-   const [ access, setAccess ] = useState(false);
+   //Poner en false para activar el login
+   const [ access, setAccess ] = useState(true);
 
    const location = useLocation();
    const navigate = useNavigate();
