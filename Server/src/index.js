@@ -1,27 +1,12 @@
-const express = require('express');
-const myRouter = require('./controllers/routes/index');
-const server = express();
+const server = require('./app');
 const PORT = 3001;
-server.use(express.json());
+const { conn }  = require('./DB_connection');
 
-server.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header(
-       'Access-Control-Allow-Headers',
-       'Origin, X-Requested-With, Content-Type, Accept'
-    );
-    res.header(
-       'Access-Control-Allow-Methods',
-       'GET, POST, OPTIONS, PUT, DELETE'
-    );
-    next();
-});
+conn.sync({ force: true }).then(()=>{
+   console.log("Se conecto exitosamente mi DB")
+   server.listen(PORT, () => {
+      console.log('Server raised in port: ' + PORT);
+   });
 
+})
 
-server.use('/rickandmorty', myRouter);
-// server.use('/carritoCompra', carritoRouter);
-
-server.listen(PORT, () => {
-   console.log('Server raised in port: ' + PORT);
-});
