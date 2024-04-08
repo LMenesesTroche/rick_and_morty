@@ -2,11 +2,7 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
    sequelize.define('Favorite', {
-      id:{
-         type: DataTypes.INTEGER,
-         allowNull:false,
-         primaryKey:true,
-      },
+      
       name:{
          type:DataTypes.STRING,
          allowNull:false,
@@ -25,7 +21,7 @@ module.exports = (sequelize) => {
       },
       origin:{
          type:DataTypes.STRING,
-         aloowNull:false,
+         allowNull:false,
       },
       image:{
          type:DataTypes.STRING,
