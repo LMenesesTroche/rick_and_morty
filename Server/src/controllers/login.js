@@ -3,8 +3,9 @@ const { User } = require("../DB_connection");
 //Esta es una funcion que verifica que haya un usario con el email que nos manden
 // y verifica la contraseña
 async function login (req, res){
+    
     try {
-        const { email, password } = req.body;
+        const { email, password } = req.query;
         if(!email || !password){
             return res.status(400).json({ error: "faltan datos"});
         }
