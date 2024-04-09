@@ -10,7 +10,7 @@ export default function Card({ id, name, status, species, gender, origin, image,
    const [isFav, setIsFav] = useState(false);
 
    const dispatch = useDispatch();
-   const myFavorites =  useSelector((state)=>state.myFavorites);
+   const myFavorites =  useSelector(state=>state.myFavorites);
 
    const myChar = {
       name: name,
@@ -36,13 +36,14 @@ export default function Card({ id, name, status, species, gender, origin, image,
          setIsFav(true);
           dispatch(addFav(myChar)) //mandar personaje como arg
       }
+
    }
 
    return (
       <div className={styles.container}>
          <button className={styles.buttonX} onClick={()=>(onClose(id))}>X</button>
          {/* BTN DE FAV */}
-         {
+         {  
             isFav ? (
                <button className={styles.favButton} onClick={handleFavorite}>❤️</button>
             ) : (

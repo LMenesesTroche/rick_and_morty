@@ -5,7 +5,6 @@ const initialState = {
     allCharacters:[],
     filteredCharacters:[]
 }
-
 const rootReducer = (state = initialState, {type, payload}) =>{
     switch(type){
         case REMOVE_CHARACTER:
@@ -20,10 +19,10 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 filteredCharacters:[...state.allCharacters,payload],
             }
         case ADD_FAVORITE:
-            
+
             return {
                 ...state,
-                allCharacters: state.allCharacters.filter((char)=>char.id !== payload)
+                myFavorites: state.allCharacters.filter((char) => char.id !== payload)
             }
         
         case REMOVED_FAVORITE:

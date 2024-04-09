@@ -7,11 +7,10 @@ export const Cards = () => {
   const dispatch = useDispatch();
   const characters = useSelector(state => state.allCharacters );
   
-  const onClose = (id) => {
-    console.log('Funciona el boton, se cerrara ', id);
+  const onClose = (id) => { //Funcion para cerrar
     dispatch(removedChar(id))
-    
   }
+
   return (
     <div className={styles.container}>
       {characters ? characters.map((item) => { 

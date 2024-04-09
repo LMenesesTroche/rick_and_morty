@@ -9,23 +9,23 @@ module.exports = (sequelize) => {
       },
       status:{
          type:DataTypes.ENUM('Alive', 'Dead', 'Unknown'),
-         allowNull:false,
+         allowNull:true,
       },
       species:{
          type:DataTypes.STRING,
-         allowNull:false,
+         allowNull:true,
       },
       gender:{
          type:DataTypes.ENUM('Female',"Male","Genderless","Unknown"),
-         allowNull:false,
+         allowNull:true,
       },
       origin:{
          type:DataTypes.STRING,
-         allowNull:false,
+         allowNull:true,
       },
       image:{
          type:DataTypes.STRING,
-         allowNull:false,
+         allowNull:true,
       }
    }, { timestamps: false });//eSTO ES PARA GUARDAR LA FECHA Y HORA DEL REGISTRO
 };

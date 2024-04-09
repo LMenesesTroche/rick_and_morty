@@ -9,6 +9,7 @@ export const FILTER = 'FILTER';
 export const ORDER = 'ORDER';
 
 export function addChar(char){
+
     return{
         type: ADD_CHARACTER,
         payload:char
@@ -22,11 +23,13 @@ export function removedChar(id){
 }
 
 export function addFav(char){
-    //OJO ASI SE MANDAN ACCIONES ASYNC
     const endpoint = 'http://localhost:3001/rickandmorty/fav';
     return async (dispatch) => {
+        
         try{
             let response = await axios.post(endpoint,char);
+            console.log(response.data);
+            
             return dispatch({
                 type: ADD_FAVORITE,
                 payload: response.data,

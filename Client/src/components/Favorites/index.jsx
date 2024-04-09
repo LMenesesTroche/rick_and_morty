@@ -14,6 +14,7 @@ const {container, btn} = styles;
 export default function Nav() {
    const dispatch = useDispatch();
    const myFavorites = useSelector((state) => state.myFavorites );
+   console.log(myFavorites)
 
    const onClose = (id) => {
       dispatch(removedChar(id))
@@ -27,7 +28,7 @@ export default function Nav() {
    }
    return (
       <div className={container}>
-         <div>
+         {/* <div>
                 <select name="order" onChange={handleOrder} >
                     <option value="A">Ascendente</option>
                     <option value="B">Descendente</option>
@@ -40,10 +41,12 @@ export default function Nav() {
                     <option value="unknown">unknown</option>
                     <option value="todos">todos</option>
                 </select>
-         </div>
+         </div> */}
+         
          {myFavorites?.map((item) => { 
           return (
             <div key={item.id} > 
+            
               <Card
                 key={item.id}
                 id={item.id}
@@ -54,7 +57,6 @@ export default function Nav() {
                 origin={item.origin.name}
                 image={item.image}
                 onClose={onClose}
-                // {...item}
               />
             </div>
           );

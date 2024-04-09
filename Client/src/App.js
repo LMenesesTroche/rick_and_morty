@@ -15,7 +15,7 @@ function App() {
    const dispatch = useDispatch();
 
    //Poner en false para activar el login
-   const [ access, setAccess ] = useState(false);
+   const [ access, setAccess ] = useState(true);
 
    const location = useLocation();
    const navigate = useNavigate();
