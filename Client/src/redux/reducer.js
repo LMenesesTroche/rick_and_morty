@@ -30,14 +30,17 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                 ...state,
                 myFavorites:state.myFavorites.filter((char)=>char.id !== payload),
             };
+
         case FILTER:
         return{
             ...state,
-            filteredCharacters: payload !== 'todos' ? state.allCharacters.filter((char)=>char.gender === payload) : state.allCharacters 
+            //Antes era filtercharacters                    allCharacters
+            myFavorites: payload !== 'todos' ? state.myFavorites.filter((char)=>char.gender === payload) : state.allCharacters 
         }
 
+
         case ORDER:
-            const sortedChars = state.filteredCharacters.slice().sort((a, b)=>{
+            const sortedChars = state.myFavorites.slice().sort((a, b)=>{
                 //se ordena de la Asc
                 if (payload === "A") {
                     return a.id - b.id
@@ -45,11 +48,10 @@ const rootReducer = (state = initialState, {type, payload}) =>{
                     return b.id - a.id
                 }
             })
-        return{
-            ...state,
-            filteredCharacters: sortedChars
-            
-        }
+            return{
+                ...state,
+                myFavorites: sortedChars
+            }
     
         default:
             return{...state};

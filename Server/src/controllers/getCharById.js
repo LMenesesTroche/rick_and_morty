@@ -23,8 +23,8 @@ async function getCharById(req, res){
             return res.status(200).json(char);            
         }else return res.status(404).send({message:'Not Found!'});
     } catch(error){
-        console.log('TUVE UN ERROR', err);
-        res.status(500).send({message:err.message});
+        console.log('TUVE UN ERROR', error);
+        res.status(500).send({message:error .message});
     }
 }
 

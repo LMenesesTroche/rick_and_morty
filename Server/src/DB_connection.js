@@ -23,7 +23,6 @@ FavoriteModel(sequelize);
 // ¡Relaciona tus modelos aquí abajo!
 const { User, Favorite } = sequelize.models;
 
-//Posible error de sintaxis en through
 User.belongsToMany(Favorite,{ through: "user_favorite" });
 Favorite.belongsToMany(User,{ through: "favorite_user"  });
 

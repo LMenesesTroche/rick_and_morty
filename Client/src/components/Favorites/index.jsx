@@ -26,9 +26,10 @@ export default function Nav() {
    const handleOrder = (e)=>{
       dispatch(orderCards(e.target.value))
    }
+
    return (
       <div className={container}>
-         {/* <div>
+         <div>
                 <select name="order" onChange={handleOrder} >
                     <option value="A">Ascendente</option>
                     <option value="B">Descendente</option>
@@ -41,7 +42,7 @@ export default function Nav() {
                     <option value="unknown">unknown</option>
                     <option value="todos">todos</option>
                 </select>
-         </div> */}
+         </div>
          
          {myFavorites?.map((item) => { 
           return (
